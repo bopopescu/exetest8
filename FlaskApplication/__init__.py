@@ -1,29 +1,24 @@
-from flask import Flask
-from flask import render_template
-import mysql.connector
+from flask import Flask, render_template
+from flask import request, redirect
 
 app = Flask(__name__)
 
 @app.route('/')
-def home():
-    return render_template("home.html",
-        )
-        
-@app.route('/home', methods=['POST'])
-def home():
-    return render_template('home.html',
-    )
+def hello_world():
+    author = "Ben Mayo"
+    name = "Ben"
+    return render_template('index.html', author=author, name=name)
+    
+@app.route('/signup', methods = ['POST'])
+def signup():
+    email = request.form['email']
+    print("The email address is '" + email + "'")
+    return email
 
-@app.route('/away', methods=['POST'])
-def away():
-    return render_template('away.html',
-    )
-    
-@app.route('/nearby', methods=['POST'])
-def nearby():
-    return render_template('nearby.html',
-    )
-    
-app.debug = True
+@app.route('/passVar', methods = ['POST'])
+def runPassVar():
+    varToPass = request.form['varBox']
+    return varToPass
+
 if __name__ == "__main__":
     app.run()
