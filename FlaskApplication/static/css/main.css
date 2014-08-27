@@ -1,0 +1,53 @@
+/* Typography */
+
+html {
+    font-family:Sintony, sans-serif;
+    color: #333;
+}
+
+h1 {
+    font-size:48px;
+    margin-top:0;
+    text-shadow:2px 0 15px #292929;
+    letter-spacing:4px;
+    text-decoration:none;
+    color:#DDD;
+}
+
+
+
+/* Forms */
+
+fieldset {
+    border: none;
+}
+
+
+
+/* Layout */
+
+body {
+    background-color: #cccccc;
+}
+
+.page {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page__hd {
+    text-align:center;
+}
+
+.page__ft {
+    padding: 20px 0;
+}
+
+/* Home */
+
+.lead {
+    background-color:rgba(255,255,255,0.6);
+    border-radius:3px;
+    box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+}

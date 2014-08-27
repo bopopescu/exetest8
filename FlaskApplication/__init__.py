@@ -1,24 +1,25 @@
 from flask import Flask, render_template
 from flask import request, redirect
 
+from models import *
+
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    author = "Ben Mayo"
-    name = "Ben"
-    return render_template('index.html', author=author, name=name)
-    
-@app.route('/signup', methods = ['POST'])
-def signup():
-    email = request.form['email']
-    print("The email address is '" + email + "'")
-    return email
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
 
-@app.route('/passVar', methods = ['POST'])
-def runPassVar():
-    varToPass = request.form['varBox']
-    return varToPass
+@app.route('/', methods=['POST'])
+def result():
+    input_a = int(request.form['input_a'])
+    input_b = int(request.form['input_b'])
+
+    f = Flight()
+
+    calc_a = f.sum(input_a, input_b)
+    calc_b = f.multiply(input_a, input_b)
+
+    return render_template('result.html', **locals())
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
