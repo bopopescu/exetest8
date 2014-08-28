@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flask</title>
+    <link href='http://fonts.googleapis.com/css?family=Sintony:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/css/main.css" media="screen">
+    <style>
+      #map_canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(54.5403, -2.5463),
+          zoom: 5,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          navigationControl: false,
+          disableDefaultUI: true,
+          scrollwheel: false,
+          mapTypeControl: false,
+          scaleControl: false,
+          draggable: false,
+          
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    
+	<style>
+      #map_canvas {
+        width: 490px;
+        height: 540px;
+      }
+    </style>
+    
+</head>
+<body>
+    <div class="page">
+     
+        <header class="page__hd">
+        </header>
+        
+<!-- 		start the header div -->
+		<div style="height:100px;width:1000px; background-image: url(../static/images/banner.gif); margin: 5px; ">
+ 		<IMG STYLE="position:relative; TOP:8px; LEFT:870px; WIDTH:95px; HEIGHT:82px" SRC="static/images/logo.gif" ALT="Flight Report">
+ 		<div style="position:relative; TOP:8px; LEFT:470px; height:35px;width:520px; background-image: url(../static/images/tab.gif); margin: 5px; "></div>
+ 		</div>
+<!-- 		end the header div -->
+
+<!-- 		start the map div -->
+         <div style= "position:relative; TOP:40px; LEFT:485px; height:600px;width:500px;     background:#3C3C3B; margin: 5px; ">
+         <div style= "position:relative; TOP:5px; LEFT:5px; height:540px;width:490px;     background:#FFFFFF;">
+         <div id="map_canvas"></div>        
+         </div>
+         <div style= "position:relative; TOP:-10px; LEFT:5px; height:45px;width:490px;     background:#FFFFFF;">
+         <h2 style = "position: relative; left: 8px; top: 8px";>Enter a postcode:</h2>
+         </div>
+
+</div>
+<!-- 		end the map div -->
+
+        
+        
+        
+        
+        
+        <div class="page__bd">
+            {% block body %}{% endblock %}
+        </div>
+
+        <footer class="page__ft">
+            &copy; Aircraft Noise Report n that.
+        </footer>
+    </div>
+</body>
+</html>

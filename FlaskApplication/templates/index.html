@@ -1,33 +1,6 @@
-{% extends "layouts/default.html" %}
+{% extends "layouts/homeLayout.html" %}
 
 {% block body %}
-<form action="/" method="POST">
-    <fieldset>
-        <p>
-            Enter some numbers:
-        </p>
-
-        <div>
-            <label>
-                Input A:
-                <input type="text" name="input_a" value="" required>
-            </label>
-        </div>
-
-        <div>
-            <label>
-                Input B:
-                <input type="text" name="input_b" value="" required>
-            </label>
-        </div>
-
-        <div> 
-           <button type="submit" name="button">Send1</button>
- 
-        </div>
-    </fieldset>
-</form>
-
 
 <form action="/tst" method="POST">
     <fieldset>
