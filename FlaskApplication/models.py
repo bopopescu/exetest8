@@ -5,21 +5,25 @@ import math
 class Flight():
     """I am the flight class"""
 
-    def sum(self, value_a, value_b):
-        total = value_a + value_b;
-        return total;
-
-    def multiply(self, value_a, value_b):
-        total = value_a * value_b
-        return total;
-
-
-    def test(self, easting, northing):
+    def test(self, pc,):
         cnx = mysql.connector.connect(user='sql250441', password='cA5!dR5!',
                                       host='sql2.freemysqlhosting.net',
                                       database='sql250441', buffered =True)
-        
+
+#         cnx = mysql.connector.connect(user='root', password='root',
+#                     host='localhost',
+#                               database='BRS')
         cur = cnx.cursor()
+
+        cur.execute ('''\
+        SELECT * FROM postcode WHERE postcode = (%s)''', (pc.replace(" ", ""),))
+        for i in range(1):
+            row1 = cur.fetchone()
+            easting = row1[2]
+            northing = row1[3]
+            
+            print  'easting is' ,easting
+        
         #get the home cell and it's values
         cur.execute ('''\
         SELECT * FROM grid WHERE minNorth <= (%s) and maxNorth >= (%s) and minEast <= (%s) and maxEast >= (%s)''', (northing, northing, easting, easting ))
@@ -139,7 +143,7 @@ class Flight():
             value8 = row1[9]     
             valueCol8 = row1[10]
        
-        resultsArray = [rowid, minLat, minLong, maxLat, maxLong, value, valueCol,
+        result = [rowid, minLat, minLong, maxLat, maxLong, value, valueCol,
                                minLat1, minLong1, maxLat1, maxLong1, value1, valueCol1,
                                minLat2, minLong2, maxLat2, maxLong2, value2, valueCol2,
                                minLat3, minLong3, maxLat3, maxLong3, value3, valueCol3,
@@ -150,6 +154,6 @@ class Flight():
                                minLat8, minLong8, maxLat8, maxLong8, value8, valueCol8,
                         yOrig, xOrig, first1,]
         
-        print resultsArray[12]
+        print result[12]
 
-        return resultsArray
+        return result

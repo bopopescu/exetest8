@@ -2,30 +2,21 @@
 
 {% block body %}
 
-<form action="/tst" method="POST">
+<form action="/pc" method="POST">
     <fieldset>
-        <p>
-            Enter the coordinates: 349172 165820
-        </p>
-
+        
         <div>
             <label>
-                Easting:
-                <input type="text" name="easting" value="" required>
+                
+                <input type="text" name="pc" value="" required>
             </label>
         </div>
-
-        <div>
-            <label>
-                Northing:
-                <input type="text" name="northing" value="" required>
-            </label>
-        </div>
-
+ 
         <div> 
-           <button type="submit" name="button">Send2</button>
+           <button type="submit" name="button">Submit</button>
  
         </div>
     </fieldset>
 </form>
+
 {% endblock %}

@@ -21,13 +21,19 @@ def result():
 
     return render_template('result.html', **locals())
 
-@app.route('/tst', methods=['POST'])
-def tst():
-    easting = int(request.form['easting'])
-    northing = int(request.form['northing'])
-    f = Flight()
-    result = f.test(easting, northing)
-    return render_template('gridResult.html', **locals())
+# @app.route('/tst', methods=['POST'])
+# def tst():
+#     easting = int(request.form['easting'])
+#     northing = int(request.form['northing'])
+#     f = Flight()
+#     result = f.test(easting, northing)
+#     return render_template('gridResult.html', **locals())
 
+@app.route('/pc', methods=['POST'])
+def pc():
+    pc = str(request.form['pc'])
+    f = Flight()
+    result = f.test(pc)
+    return render_template('gridResult.html', **locals())
 if __name__ == "__main__":
     app.run(debug=True)

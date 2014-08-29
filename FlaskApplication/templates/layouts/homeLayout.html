@@ -55,34 +55,26 @@
 
 <!-- 		start the map div -->
          <div style= "position:relative; TOP:40px; LEFT:485px; height:600px;width:500px;     background:#3C3C3B; margin: 5px; ">
-         <div style= "position:relative; TOP:5px; LEFT:5px; height:540px;width:490px;     background:#FFFFFF;">
-         <div id="map_canvas"></div>        
-         </div>
+
+         <!-- A white div which holds the map -->
+         	<div style= "position:relative; TOP:5px; LEFT:5px; height:540px;width:490px;     background:#FFFFFF;">
+         	<div id="map_canvas"></div>        
+         	</div>
+ 
+          <!-- the white banner at the bottom of the map -->
          <div style= "position:relative; TOP:-10px; LEFT:5px; height:45px;width:490px;     background:#FFFFFF;">
-         
-         <h2 style = "position: relative; left: 8px; top: 8px";>Enter a postcode:</h2>
-         
-         <div style= "position:relative; TOP:-50px; LEFT:210px; height:45px;width:280px;     background:#FFFFFF;">
-         <label>
-         <input type="text" name="postcode" value=""  style= "position:relative; border-radius: 5px; text-transform: uppercase; font-size:160%; TOP:5px; LEFT:2px; height:30px;width:160px;>
-            </label>
-         
-         
-         </div>
-         
-         </div>
-         
-        </div>
-         
-         </div>
-
-</div>
-<!-- 		end the map div -->
-
-               
-        <div class="page__bd">
+         	<h2 style = "position: relative; left: 8px; top: 8px";>Enter a postcode:</h2>
+            <!-- Another div to hold the postcode inout box -->
+         	<div style= "position:relative; TOP:-45px; LEFT:210px; height:40px;width:280px;     background:#FFFFFF;">
+                               
+        	<div class="page__bd">
             {% block body %}{% endblock %}
-        </div>
+            </div>
+            </div>
+        	</div>
+        	
+        	
+
 
         <footer class="page__ft">
         </footer>
