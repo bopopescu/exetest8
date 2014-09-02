@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask import request, redirect
 
+
 from models import *
 
 app = Flask(__name__)
@@ -37,3 +38,8 @@ def pc():
     return render_template('gridResult.html', **locals())
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+def prints():
+        print 'hello'

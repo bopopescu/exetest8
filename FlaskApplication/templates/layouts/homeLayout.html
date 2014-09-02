@@ -49,8 +49,8 @@
 <!-- 		start the header div -->
 		<div style="height:100px;width:1000px; background-image: url(../static/images/banner.gif); margin: 5px; ">
  		<IMG STYLE="position:relative; TOP:8px; LEFT:870px; WIDTH:95px; HEIGHT:82px" SRC="static/images/logo.gif" ALT="Flight Report">
- 		<div style="position:relative; TOP:8px; LEFT:470px; height:35px;width:520px; background-image: url(../static/images/tab.gif); margin: 5px; "></div>
- 		</div>
+<!--  		<div style="position:relative; TOP:8px; LEFT:470px; height:35px;width:520px; background-image: url(../static/images/tab.gif); margin: 5px; "></div>
+ --> 		</div>
 <!-- 		end the header div -->
 
 <!-- 		start the map div -->
@@ -64,12 +64,19 @@
           <!-- the white banner at the bottom of the map -->
          <div style= "position:relative; TOP:-10px; LEFT:5px; height:45px;width:490px;     background:#FFFFFF;">
          	<h2 style = "position: relative; left: 8px; top: 8px";>Enter a postcode:</h2>
-            <!-- Another div to hold the postcode inout box -->
-         	<div style= "position:relative; TOP:-45px; LEFT:210px; height:40px;width:280px;     background:#FFFFFF;">
+            <!-- Another div to hold the postcode input box -->
+         	<div style= "position:relative; BOTTOM:50px; LEFT:210px; height:40px;width:280px;     background:#FFFFFF;">
                                
         	<div class="page__bd">
             {% block body %}{% endblock %}
             </div>
+            
+            <!-- A white div to the left of the map -->
+         	<div style= "position:relative; BOTTOM:611px; RIGHT:695px; height:595px;width:450px; padding: 15px;     background:#FFFFFF;">
+         	<h2>Flight Report</h2>
+         	<h3>BS48 3DY - Bristol Airport</h3>
+         	</div>
+            
             </div>
         	</div>
         	

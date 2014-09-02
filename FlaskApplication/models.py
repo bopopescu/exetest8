@@ -36,6 +36,15 @@ class Flight():
             maxLong = row1[8]
             value = row1[9]
             valueCol = row1[10]
+            t1 = row1[11]
+            t2 = row1[12]
+            t3 = row1[13]
+            t4 = row1[14]
+            t5 = row1[15]
+            t6 = row1[16]
+            t7 = row1[17]
+            t8 = row1[18]
+
 
         #run some logic to get the x and y
         y = int(math.ceil(rowid/300))
@@ -152,7 +161,7 @@ class Flight():
                                minLat6, minLong6, maxLat6, maxLong6, value6, valueCol6,
                                minLat7, minLong7, maxLat7, maxLong7, value7, valueCol7,
                                minLat8, minLong8, maxLat8, maxLong8, value8, valueCol8,
-                        yOrig, xOrig, first1,]
+                        yOrig, xOrig, first1, t1, t2, t3, t4, t5, t6, t7,]
         
         print result[12]
 

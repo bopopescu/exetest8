@@ -141,7 +141,7 @@
     	  // Construct the polygon.
     	  sq0 = new google.maps.Polygon({
     	  paths: triangleCoords,
-    	  fillColor: '{{ result [60] }}',
+    	  fillColor: '{{ result [6] }}',
     	  fillOpacity: .4,
     	  strokeWeight: 2
     	  });
@@ -161,7 +161,7 @@
     	          var map = new google.maps.Map(map_canvas, map_options)
 
     	          sq0.setMap(map)
-    	           sq1.setMap(map)
+    	          sq1.setMap(map)
     	          sq2.setMap(map)
     	          sq3.setMap(map)
     	          sq4.setMap(map)
@@ -174,10 +174,7 @@
     	        google.maps.event.addDomListener(window, 'load', initialize);
     	      </script>
     	      
-    	       
     	  <div id="map_canvas"></div>
-
-
     	      <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     	      <script type="text/javascript">
     	        google.load("visualization", "1", {packages:["corechart"]});
@@ -188,16 +185,15 @@
     	    // Some raw data (not necessarily accurate)
     	    var data = google.visualization.arrayToDataTable([
     	            ['Time', 'Number of FLights', 'avg Peak dB'],
-    	            ['01:00', 3, 2],
-    	            ['02:00', 4, 2],
-    	            ['03:00', 5, 2],
-    	            ['04:00', 6, 2],
-    	            ['05:00', 7, 2],
-    	            ['06:00', 5, 4],
-    	            ['07:00', 2, 4],
-    	            ['08:00', 3, 4],
-    	            ['09:00', 3, 5],
-    	            ['10:00', 4, 7],
+    	            ['03:00', {{ result [58] }}, 2],
+    	            ['06:00', {{ result [59] }}, 2],
+    	            ['09:00', {{ result [60] }}, 2],
+    	            ['12:00', {{ result [61] }}, 2],
+    	            ['15:00', {{ result [62] }}, 2],
+    	            ['18:00', {{ result [63] }}, 4],
+    	            ['21:00', {{ result [64] }}, 4],
+    	            ['24:00', {{ result [65] }}, 4],
+/*     	            ['10:00', 4, 7],
     	            ['11:00', 4, 2],
     	            ['12:00', 5, 5],
     	            ['13:00', 6, 7],
@@ -211,7 +207,7 @@
     	            ['21:00', 3, 7],
     	            ['22:00', 3, 9],
     	            ['23:00', 3, 7],
-    	            ['24:00', 3, 1],
+    	            ['24:00', 3, 1], */
     	          ]);
 
     	          // Set chart options
@@ -221,6 +217,7 @@
     	      vAxis: {title: "Frequency"},
     	      hAxis: {title: "Time"},
     	      seriesType: "bars",
+    	      colors: ['#e0440e', '#00FF00'],
     	      series: {1: {type: "line"}}
     	    };
 
@@ -229,8 +226,9 @@
     	          }
     	          
     	          
-    	      </script>
-    	      <!--Div that will hold the pie chart-->
+    	      </script>    	      
+    	      
+    	      <!--Div that will hold the bar chart-->
     	      <div id="chart_div" style="width: 1000px; height: 500px;"></div>
 
     	          
