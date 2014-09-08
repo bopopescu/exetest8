@@ -34,8 +34,8 @@
     
 	<style>
       #map_canvas {
-        width: 1000px;
-        height: 600px;
+        width: 700px;
+        height: 500px;
       }
     </style>
     
@@ -47,21 +47,67 @@
         </header>
         
 <!-- 		start the header div -->
-		<div style="height:100px;width:1000px; background-image: url(../static/images/banner.gif); margin: 5px; ">
+		<div style="height:100px;width:1000px; background-image: url(../static/images/banner.gif); margin: 0px; ">
  		<IMG STYLE="position:relative; TOP:8px; LEFT:870px; WIDTH:95px; HEIGHT:82px" SRC="static/images/logo.gif" ALT="Flight Report">
- 		</div>
-<!-- 		end the header div -->
+ 		</div><!-- 		end the header div -->
+ 		
+ 		
+ 		
+ 				
 <body>
-    <div class="page">
-        
 
+    <div style="height:1000px;width:1000px; margin: 0px; background:#FFFFFF;">
+    <h2>Flight Nuisance Report</h2>
+    <div style="height:600px;width:600px; margin: 0px; background:#FFFFFF;">
+                    {% block body %}{% endblock %}
+    </div>
+        <div style="position:relative; BOTTOM:620px; LEFT:705px; height:500px;width:290px; margin: 0px; background:#FFFFFF;">
+        <h2>Flight Nuisance Rating</h2>
+        
+        
+        <div style="position:relative; BOTTOM:0px; LEFT:10px; height:70px; width:270px; margin: 0px; background:#FFFFFF;">  
+        <div style="position:relative; TOP:10px; LEFT:10px; height:50px; width:50px; margin: 0px; background:#FF0000;">
+        </div>
+        <div style="position:relative; BOTTOM:40px; LEFT:70px; height:50px; width:190px; margin: 0px; background:#FFFFFF;">        <p>Very High</p>
+        </div>
+        </div>
+        
+        <div style="position:relative; BOTTOM:0px; LEFT:10px; height:70px; width:270px; margin: 0px; background:#FFFFFF;">  
+        <div style="position:relative; TOP:10px; LEFT:10px; height:50px; width:50px; margin: 0px; background:#FF9900;">
+        </div>
+        <div style="position:relative; BOTTOM:40px; LEFT:70px; height:50px; width:190px; margin: 0px; background:#FFFFFF;">        <p>High</p>
+        </div>
+        </div>
+        
+        <div style="position:relative; BOTTOM:0px; LEFT:10px; height:70px; width:270px; margin: 0px; background:#FFFFFF;">  
+        <div style="position:relative; TOP:10px; LEFT:10px; height:50px; width:50px; margin: 0px; background:#FFCC00;">
+        </div>
+        <div style="position:relative; BOTTOM:40px; LEFT:70px; height:50px; width:190px; margin: 0px; background:#FFFFFF;">        <p>Medium</p>
+        </div>
+        </div>
+        
+        <div style="position:relative; BOTTOM:0px; LEFT:10px; height:70px; width:270px; margin: 0px; background:#FFFFFF;">  
+        <div style="position:relative; TOP:10px; LEFT:10px; height:50px; width:50px; margin: 0px; background:#BBFF00;">
+        </div>
+        <div style="position:relative; BOTTOM:40px; LEFT:70px; height:50px; width:190px; margin: 0px; background:#FFFFFF;">        <p>Low</p>
+        </div>
+        </div>
+        
+        <div style="position:relative; BOTTOM:0px; LEFT:10px; height:70px; width:270px; margin: 0px; background:#FFFFFF;">  
+        <div style="position:relative; TOP:10px; LEFT:10px; height:50px; width:50px; margin: 0px; background:#00FF00;">
+        </div>
+        <div style="position:relative; BOTTOM:40px; LEFT:70px; height:50px; width:190px; margin: 0px; background:#FFFFFF;">        <p>Very Low</p>
+        </div>
+        </div>
+                <p>Flight Nuisance levels are indicative of modeled results of previous flights.</p>
+        </div>
+        
         <div class="page__bd">
-            {% block body %}{% endblock %}
+        </div>
         </div>
 
         <footer class="page__ft">
-            &copy; Aircraft Noise Report n that.
+            &copy; Exe Analytics.
         </footer>
-    </div>
 </body>
 </html>
